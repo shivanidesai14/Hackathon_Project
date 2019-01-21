@@ -1,0 +1,52 @@
+<ion-header>
+
+    <ion-navbar color="extra" hideBackButton>
+        <ion-title>Login</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content scroll="false">
+
+    <div class="splash-bg"></div>
+    <div class="splash-info">
+        <div class="splash-logo">
+
+        </div>
+    </div>
+    <div padding>
+        <ion-list>
+
+            <ion-item>
+                <ion-label floating class="fontedit">Username</ion-label>
+                <ion-input type="text" [(ngModel)]="email"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating class="fontedit">Password</ion-label>
+                <ion-input type="password" [(ngModel)]="pass"></ion-input>
+            </ion-item>
+
+        </ion-list>
+
+        <a style="float:right;font-size:15px;" (click)="showPrompt()">Forget Password??</a>
+        <div>
+            <h2>&nbsp;</h2>
+        </div>
+        <button ion-button block style="background:#E53935" (click)="onLogin()">Login</button>
+        <Br>
+
+        <button ion-button block style="background:#E53935" (click)="onSignup()">SIGNUP</button>
+
+
+
+
+    </div>
+</ion-content>
+<style type="text/css">
+    .error {
+        color: darkred;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+</style>
