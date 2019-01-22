@@ -1,17 +1,21 @@
-import { NgModule, ErrorHandler } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
+import { NgModule, ErrorHandler } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { IonicApp, IonicModule, IonicErrorHandler } from "ionic-angular";
+import { MyApp } from "./app.component";
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
+import { AboutPage } from "../pages/about/about";
+import { ContactPage } from "../pages/contact/contact";
+import { HomePage } from "../pages/home/home";
+import { TabsPage } from "../pages/tabs/tabs";
 import { LoginPage } from "../pages/login/login";
 import { SignupPage } from "../pages/signup/signup";
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from "@ionic-native/status-bar";
+import { SplashScreen } from "@ionic-native/splash-screen";
+import { ProductsPage } from "../pages/products/products";
+import { ListProductsPage } from "../pages/list-products/list-products";
+import { ServicesPage } from "../pages/services/services";
+import { ProfilePage } from "../pages/profile/profile";
 
 @NgModule({
   declarations: [
@@ -21,12 +25,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    ProductsPage,
+    ListProductsPage,
+    ServicesPage,
+    ProfilePage
   ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp)
-  ],
+  imports: [BrowserModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -35,12 +40,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    ProductsPage,
+    ListProductsPage,
+    ServicesPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
 export class AppModule {}

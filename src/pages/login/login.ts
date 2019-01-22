@@ -1,5 +1,10 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
+import { Component } from "@angular/core";
+import {
+  IonicPage,
+  NavController,
+  NavParams,
+  AlertController
+} from "ionic-angular";
 import { SignupPage } from "../signup/signup";
 import { TabsPage } from "../tabs/tabs";
 /**
@@ -11,47 +16,46 @@ import { TabsPage } from "../tabs/tabs";
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
+  selector: "page-login",
+  templateUrl: "login.html"
 })
 export class LoginPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams,public alert:AlertController) {
-  }
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public alert: AlertController
+  ) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    console.log("ionViewDidLoad LoginPage");
   }
-  onLogin()
-  {
-    this.navCtrl.push(TabsPage);
-
+  onLogin() {
+    this.navCtrl.setRoot(TabsPage);
   }
-  onSignup()
-  {
-      this.navCtrl.push(SignupPage);
+  onSignup() {
+    this.navCtrl.push(SignupPage);
   }
   showPrompt() {
     let prompt = this.alert.create({
-      title: 'Forgot Password',
+      title: "Forgot Password",
       message: "Enter Your Email Id To Get Your Password",
       inputs: [
         {
-          name: 'name',
-          placeholder: 'Email_id'
-        },
+          name: "name",
+          placeholder: "Email_id"
+        }
       ],
       buttons: [
         {
-          text: 'Cancel',
+          text: "Cancel",
           handler: data => {
-            console.log('Cancel clicked');
+            console.log("Cancel clicked");
           }
         },
         {
-          text: 'Send',
+          text: "Send",
           handler: data => {
-/*this.email = data.name;
+            /*this.email = data.name;
             this.forgotPassword();*/
           }
         }
@@ -59,5 +63,4 @@ export class LoginPage {
     });
     prompt.present();
   }
-
 }

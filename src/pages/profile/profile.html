@@ -1,0 +1,64 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Welcome, Zeel Modi</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="https://www.india.com/wp-content/uploads/2018/02/Master-1.jpg" >
+      </ion-avatar>
+      <h1>Zeel Modi</h1>
+      <button ion-button round>Edit Profile</button>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-icon name="bookmark"></ion-icon>
+    My WishList
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="home"></ion-icon>
+    Shipping Address
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="bookmark"></ion-icon>
+    My WishList
+  </ion-item>
+
+  <div padding>
+    <ion-segment [(ngModel)]="order">
+      <ion-segment-button value="track">
+        Track Orders
+      </ion-segment-button>
+      <ion-segment-button value="past">
+        Past Orders
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="order">
+    <ion-list *ngSwitchCase="'track'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="img/thumbnail-puppy-1.jpg">
+        </ion-thumbnail>
+        <h2>Ruby</h2>
+      </ion-item>
+      ...
+    </ion-list>
+
+  </div>
+</ion-content>
