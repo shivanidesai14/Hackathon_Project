@@ -16,7 +16,7 @@
   <ion-list>
     <ion-item>
       <ion-avatar item-start>
-        <img src="https://www.india.com/wp-content/uploads/2018/02/Master-1.jpg" >
+        <img src="https://www.india.com/wp-content/uploads/2018/02/Master-1.jpg">
       </ion-avatar>
       <h1>Zeel Modi</h1>
       <button ion-button round>Edit Profile</button>
@@ -52,12 +52,25 @@
   <div [ngSwitch]="order">
     <ion-list *ngSwitchCase="'track'">
       <ion-item>
+        <!-- <ion-thumbnail item-start>
+          <img src="img/thumbnail-puppy-1.jpg">
+        </ion-thumbnail> -->
+        <!-- <h2>Ruby</h2> -->
+      </ion-item>
+      No Orders
+    </ion-list>
+
+  </div>
+
+  <div [ngSwitch]="order">
+    <ion-list *ngSwitchCase="'past'">
+      <ion-item>
         <ion-thumbnail item-start>
           <img src="img/thumbnail-puppy-1.jpg">
         </ion-thumbnail>
-        <h2>Ruby</h2>
+        <!-- <h2>Ruby</h2> -->
       </ion-item>
-      ...
+      No Orders
     </ion-list>
 
   </div>
