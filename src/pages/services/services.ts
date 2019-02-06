@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Service } from './service_c';
 import { ServicedbProvider } from '../../providers/servicedb/servicedb';
+import { DetailservicePage } from "../detailservice/detailservice";
 /**
  * Generated class for the ServicesPage page.
  *
@@ -16,6 +17,7 @@ import { ServicedbProvider } from '../../providers/servicedb/servicedb';
 })
 export class ServicesPage {
         arr:Service[]=[];
+        grid: Array<Array<any>>;
     //    grid: Array<Array<string>>;
 
   constructor(public navCtrl: NavController,
@@ -28,10 +30,11 @@ export class ServicesPage {
 
     this._data.getAllCategories().subscribe(
 
-      (data: Service[]) => {
-        this.arr = data;
+      (data: any) => {
+       // this.arr = data;
         console.log("hiee services");
-       console.log(this.arr);
+        this.arr=data.Data;
+
       },
       function (e) {
         alert(e);
@@ -43,5 +46,11 @@ export class ServicesPage {
     );
 
   }
+ detailservice(sid) {
+   this.navCtrl.push(DetailservicePage, {
+     id: sid
+   })
+ }
+
 
 }

@@ -11,6 +11,7 @@ import { HomePage } from "../pages/home/home";
 import { TabsPage } from "../pages/tabs/tabs";
 import { LoginPage } from "../pages/login/login";
 import { SignupPage } from "../pages/signup/signup";
+import { DetailservicePage } from "../pages/detailservice/detailservice";
 
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
@@ -32,7 +33,8 @@ import { ServicedbProvider } from '../providers/servicedb/servicedb';
     ProductsPage,
     ListProductsPage,
     ServicesPage,
-    ProfilePage
+    ProfilePage,
+    DetailservicePage
   ],
   imports: [BrowserModule,
      IonicModule.forRoot(MyApp),
@@ -51,7 +53,8 @@ import { ServicedbProvider } from '../providers/servicedb/servicedb';
     ProductsPage,
     ListProductsPage,
     ServicesPage,
-    ProfilePage
+    ProfilePage,
+    DetailservicePage
   ],
   providers: [
     StatusBar,
