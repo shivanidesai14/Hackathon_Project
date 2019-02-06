@@ -1,6 +1,8 @@
 import { NgModule, ErrorHandler } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { IonicApp, IonicModule, IonicErrorHandler } from "ionic-angular";
+import { HttpModule } from "@angular/http";
+import { HttpClientModule } from "@angular/common/http";
 import { MyApp } from "./app.component";
 
 import { AboutPage } from "../pages/about/about";
@@ -16,6 +18,7 @@ import { ProductsPage } from "../pages/products/products";
 import { ListProductsPage } from "../pages/list-products/list-products";
 import { ServicesPage } from "../pages/services/services";
 import { ProfilePage } from "../pages/profile/profile";
+import { ServicedbProvider } from '../providers/servicedb/servicedb';
 
 @NgModule({
   declarations: [
@@ -31,8 +34,12 @@ import { ProfilePage } from "../pages/profile/profile";
     ServicesPage,
     ProfilePage
   ],
-  imports: [BrowserModule, IonicModule.forRoot(MyApp)],
+  imports: [BrowserModule,
+     IonicModule.forRoot(MyApp),
+     HttpModule, HttpClientModule,],
+
   bootstrap: [IonicApp],
+  
   entryComponents: [
     MyApp,
     AboutPage,
@@ -49,7 +56,8 @@ import { ProfilePage } from "../pages/profile/profile";
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    ServicedbProvider
   ]
 })
 export class AppModule {}

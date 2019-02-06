@@ -14,5 +14,12 @@
 
 
 <ion-content padding>
+  <h2> Welcome services</h2>
+  <ion-card *ngFor="let item of arr">
 
+    <ion-item>
+            <span align="left" class="col col-50"><p>{{item.service_id}}</p></span>
+           
+     </ion-item>
+</ion-card>
 </ion-content>
