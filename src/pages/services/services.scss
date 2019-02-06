@@ -1,3 +1,18 @@
-page-services {
-
-}
+    page-services {
+        ion-card {
+            position: relative;
+            text-align: center;
+            //  height: 180px;
+            //  width: 100px;
+            margin: -20 !important;
+            padding: -20 !important;
+        }
+        ion-row {
+            ion-card {
+                width: 100% !important;
+                margin-left: -20 !important;
+                margin-right: -20 !important;
+                text-align: center;
+            }
+        }
+    }
