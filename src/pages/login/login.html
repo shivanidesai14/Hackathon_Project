@@ -1,6 +1,6 @@
 <ion-header>
 
-    <ion-navbar color="extra" hideBackButton>
+    <ion-navbar color="dark" hideBackButton>
         <ion-title>Login</ion-title>
     </ion-navbar>
 
@@ -19,12 +19,13 @@
 
             <ion-item>
                 <ion-label floating class="fontedit">Username</ion-label>
-                <ion-input type="text" [(ngModel)]="email"></ion-input>
+                <ion-input type="text" [(ngModel)]="email_id"></ion-input>
             </ion-item>
 
             <ion-item>
                 <ion-label floating class="fontedit">Password</ion-label>
-                <ion-input type="password" [(ngModel)]="pass"></ion-input>
+                <ion-input type="password" [(ngModel)]="password"></ion-input>
+                <ion-icon name="eye" item-right (click)="showPassword()"></ion-icon>
             </ion-item>
 
         </ion-list>
