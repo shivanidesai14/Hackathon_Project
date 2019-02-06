@@ -8,9 +8,12 @@ import { LoginPage } from "../pages/login/login";
 
 @Component({
   templateUrl: "app.html"
+
 })
 export class MyApp {
   rootPage: any = LoginPage;
+
+
 
   constructor(
     platform: Platform,
@@ -24,4 +27,5 @@ export class MyApp {
       splashScreen.hide();
     });
   }
+
 }

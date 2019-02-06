@@ -3,6 +3,9 @@ import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { IonicApp, IonicModule, IonicErrorHandler } from "ionic-angular";
 import { MyApp } from "./app.component";
+import { HttpModule } from "@angular/http";
+import { IonicStorageModule } from "@ionic/storage";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AboutPage } from "../pages/about/about";
 import { ContactPage } from "../pages/contact/contact";
@@ -20,6 +23,9 @@ import { BuyProductPage } from "../pages/buy-product/buy-product";
 import { ServicesPage } from "../pages/services/services";
 import { ProfilePage } from "../pages/profile/profile";
 import { SellersPage } from "../pages/sellers/sellers";
+import { ProfildetailsPage } from "../pages/profildetails/profildetails";
+
+import { UserlogProvider } from "../pages/Provider/userlog/userlog";
 
 @NgModule({
   declarations: [
@@ -36,9 +42,16 @@ import { SellersPage } from "../pages/sellers/sellers";
     BuyProductPage,
     ServicesPage,
     ProfilePage,
-    SellersPage
+    SellersPage,
+    ProfildetailsPage
   ],
-  imports: [BrowserModule, FormsModule, IonicModule.forRoot(MyApp)],
+  imports: [
+    BrowserModule,
+    HttpModule,
+    HttpClientModule,
+    FormsModule,
+    IonicModule.forRoot(MyApp)
+  ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -54,12 +67,14 @@ import { SellersPage } from "../pages/sellers/sellers";
     BuyProductPage,
     ServicesPage,
     ProfilePage,
-    SellersPage
+    SellersPage,
+    ProfildetailsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    UserlogProvider
   ]
 })
 export class AppModule {}
