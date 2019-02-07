@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { BuyProductPage } from '../buy-product/buy-product';
 
 /**
- * Generated class for the SellersPage page.
+ * Generated class for the PlaceOrderPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,21 +10,16 @@ import { BuyProductPage } from '../buy-product/buy-product';
 
 @IonicPage()
 @Component({
-  selector: 'page-sellers',
-  templateUrl: 'sellers.html',
+  selector: 'page-place-order',
+  templateUrl: 'place-order.html',
 })
-export class SellersPage {
+export class PlaceOrderPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SellersPage');
+    console.log('ionViewDidLoad PlaceOrderPage');
   }
-
-  buyNowPro() {
-    this.navCtrl.push(BuyProductPage);
-  }
-
 
 }

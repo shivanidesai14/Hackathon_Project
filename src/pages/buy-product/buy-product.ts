@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { PlaceOrderPage } from "../place-order/place-order";
 
 /**
  * Generated class for the BuyProductPage page.
@@ -10,16 +11,37 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-buy-product',
-  templateUrl: 'buy-product.html',
+  selector: "page-buy-product",
+  templateUrl: "buy-product.html"
 })
 export class BuyProductPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  quantity: number = 1;
+  price: number = 62974;
+  totalAmt: number;
+  delievery: boolean;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BuyProductPage');
+    console.log("ionViewDidLoad BuyProductPage");
+    this.totalAmt = this.price * this.quantity;
+    this.delievery = false;
   }
 
+  increase() {
+    this.quantity++;
+    this.totalAmt = this.price * this.quantity;
+  }
+
+  decrease() {
+    this.quantity--;
+    this.totalAmt = this.price * this.quantity;
+  }
+
+  placeOrder() {
+    this.navCtrl.push(PlaceOrderPage);
+  }
+
+  cancelOrder() {
+    this.navCtrl.pop();
+  }
 }

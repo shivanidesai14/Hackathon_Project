@@ -20,9 +20,78 @@
     <p>+911234567890</p>
   </ion-item>
 
-  <ion-item>
-    <h2>
-
-    </h2>
+  <ion-item text-wrap>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h2>
+            Pixel 3 & Pixel 3XL
+          </h2>
+          <p>Bestdeals2211</p>
+          <h2>{{ price | currency: "INR" }}</h2>
+          <p>Delievery by 12th February,2019</p>
+        </ion-col>
+        <ion-col>
+          <ion-row>
+            <ion-col>
+              <img src="https://img4.gadgetsnow.com/gd/images/products/additional/large/G84285_View_1/mobiles/smartphones/google-pixel-3-xl-64gb-just-black-4gb-ram-.jpg"
+                alt="" height="75px" width="50px" srcset="" style="float: right;">
+              <!-- <ion-thumbnail item-end>
+            <img src="https://img4.gadgetsnow.com/gd/images/products/additional/large/G84285_View_1/mobiles/smartphones/google-pixel-3-xl-64gb-just-black-4gb-ram-.jpg">
+          </ion-thumbnail> -->
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-item>
+
+  <ion-item>
+    <ion-label text-wrap>Qty:</ion-label>
+    <button ion-button clear outline color="primary" icon-only item-start (click)="increase()">
+      <ion-icon name='add-circle' (click)="increase()"></ion-icon>
+    </button>
+    <ion-label>{{quantity}}</ion-label>
+    <button ion-button clear color="primary" icon-only item-end (click)="decrease()">
+      <ion-icon name='remove-circle' (click)="decrease()"></ion-icon>
+    </button>
+  </ion-item>
+  <br>
+  <ion-list>
+    <ion-list-header>
+      Price Details
+    </ion-list-header>
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p>Price ({{quantity}} item)</p>
+          </ion-col>
+          <ion-col style="float: right;">
+            {{totalAmt | currency: "INR" }}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <p>Delievery</p>
+          </ion-col>
+          <ion-col style="float: right;">
+            <span style="color: green">FREE</span>
+            <!-- <span *ngIf="!delievery" style="color: red">Not Eligible</span> -->
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <p>Amount Payable</p>
+          </ion-col>
+          <ion-col style="float: right;">
+            {{totalAmt | currency: "INR" }}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+  <button align="center" (click)="cancelOrder()" ion-button style="background:rgb(255,102,102)">Cancel Order</button>
+  <button align="center" (click)="placeOrder()" ion-button color="secondary">Place Order</button>
+
 </ion-content>

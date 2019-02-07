@@ -19,10 +19,11 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 import { ProductsPage } from "../pages/products/products";
 import { ListProductsPage } from "../pages/list-products/list-products";
 import { ProductDetailPage } from "../pages/product-detail/product-detail";
+import { PlaceOrderPage } from "../pages/place-order/place-order";
+import { SellersPage } from "../pages/sellers/sellers";
 import { BuyProductPage } from "../pages/buy-product/buy-product";
 import { ServicesPage } from "../pages/services/services";
 import { ProfilePage } from "../pages/profile/profile";
-import { SellersPage } from "../pages/sellers/sellers";
 import { ProfildetailsPage } from "../pages/profildetails/profildetails";
 
 import { UserlogProvider } from "../pages/Provider/userlog/userlog";
@@ -40,6 +41,7 @@ import { UserlogProvider } from "../pages/Provider/userlog/userlog";
     ListProductsPage,
     ProductDetailPage,
     BuyProductPage,
+    PlaceOrderPage,
     ServicesPage,
     ProfilePage,
     SellersPage,
@@ -65,6 +67,7 @@ import { UserlogProvider } from "../pages/Provider/userlog/userlog";
     ListProductsPage,
     ProductDetailPage,
     BuyProductPage,
+    PlaceOrderPage,
     ServicesPage,
     ProfilePage,
     SellersPage,
