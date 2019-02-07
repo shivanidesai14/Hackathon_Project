@@ -6,6 +6,7 @@ import { MyApp } from "./app.component";
 import { HttpModule } from "@angular/http";
 import { IonicStorageModule } from "@ionic/storage";
 import { HttpClientModule } from "@angular/common/http";
+import { CallNumber } from "@ionic-native/call-number/ngx";
 
 import { AboutPage } from "../pages/about/about";
 import { ContactPage } from "../pages/contact/contact";
@@ -77,7 +78,8 @@ import { UserlogProvider } from "../pages/Provider/userlog/userlog";
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    UserlogProvider
+    UserlogProvider,
+    CallNumber
   ]
 })
 export class AppModule {}

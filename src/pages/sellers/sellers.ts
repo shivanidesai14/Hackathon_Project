@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { BuyProductPage } from '../buy-product/buy-product';
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+
+import { BuyProductPage } from "../buy-product/buy-product";
 
 /**
  * Generated class for the SellersPage page.
@@ -11,21 +12,18 @@ import { BuyProductPage } from '../buy-product/buy-product';
 
 @IonicPage()
 @Component({
-  selector: 'page-sellers',
-  templateUrl: 'sellers.html',
+  selector: "page-sellers",
+  templateUrl: "sellers.html"
 })
 export class SellersPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  myNum: number = 8128076168;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SellersPage');
+    console.log("ionViewDidLoad SellersPage");
   }
 
   buyNowPro() {
     this.navCtrl.push(BuyProductPage);
   }
-
-
 }

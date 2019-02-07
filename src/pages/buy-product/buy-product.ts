@@ -19,6 +19,7 @@ export class BuyProductPage {
   price: number = 62974;
   totalAmt: number;
   delievery: boolean;
+  userContact: number = 8460816553;
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
