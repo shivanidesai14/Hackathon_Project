@@ -14,44 +14,39 @@
 
 
 <ion-content class="card-background-page">
-    <ion-item>
-        <ion-input type="text" placeholder="Enter Location"></ion-input>
-        <button ion-button icon-start clear item-end>
-      <ion-icon name="navigate"></ion-icon>
-      Search
-    </button>
-    </ion-item>
-
-    <ion-item>
-        <img src="http://purplelynx.com/wp-content/uploads/2015/09/shop.png" alt="" srcset="">
-    </ion-item>
-
+    <ion-slides autoplay="1000" loop="true" speed="500" style="height:200px;" pager>
+        <ion-slide>
+            <img src="../assets/imgs/5.jpg" alt="">
+        </ion-slide>
+        <ion-slide>
+            <img src="../assets/imgs/category_9bf537c0.png" alt="">
+        </ion-slide>
+        <ion-slide>
+            <img src="../assets/imgs/3.png" alt="">
+        </ion-slide>
+        <ion-slide>
+            <img src="../assets/imgs/4.jpg" alt="">
+        </ion-slide>
+    </ion-slides>
 
 
     <h1 align="center">Our Products</h1>
 
-    <ion-card (click)="onCardClick()">
-        <img src="https://blog.mozilla.org/wp-content/uploads/2017/03/real-mobile-2x-1400x770.png" class="imgBlur" />
-        <div class="card-title">Smartphones</div>
-        <div class="card-subtitle">41 Listings</div>
+
+    <ion-card class="myCard" (click)="onCardClick()">
+        <img src=" https://blog.mozilla.org/wp-content/uploads/2017/03/real-mobile-2x-1400x770.png" />
+        <div class="myOverlay">
+            <div class="card-title">Smartphones</div>
+            <div class="card-subtitle">16 Listings</div>
+        </div>
     </ion-card>
 
-    <ion-card>
+    <ion-card class="myCard">
         <img src="http://www.pngmart.com/files/7/Groceries-PNG-Transparent-Image.png" />
-        <div class="card-title">Groceries</div>
-        <div class="card-subtitle">64 Listings</div>
+        <div class="myOverlay">
+            <div class="card-title">Groceries</div>
+            <div class="card-subtitle">10 Listings</div>
+        </div>
     </ion-card>
 
-    <!-- <ion-card>
-      <img src="img/card-sf.png" />
-      <div class="card-title">San Francisco</div>
-      <div class="card-subtitle">72 Listings</div>
-    </ion-card>
-
-    <ion-card>
-      <img src="img/card-madison.png" />
-      <div class="card-title">Madison</div>
-      <div class="card-subtitle">28 Listings</div>
-    </ion-card>
- -->
 </ion-content>

@@ -19,6 +19,7 @@ export class ProductsPage {
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad ProductsPage");
+    
   }
 
   onCardClick() {

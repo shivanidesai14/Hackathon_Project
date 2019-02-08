@@ -1,0 +1,92 @@
+<!--
+  Generated template for the ProductDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="extra">
+        <ion-title>Pixel 3</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-slides pager autoplay="1000" loop="500" style="height:300px;">
+        <ion-slide>
+            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201806/Google_Pixel_3__Phone_Designer_0.jpeg?eXDBqi8Q18WTcCeXsn_wadCvTir6MVKN" height="300px" width="100%" />
+        </ion-slide>
+
+        <ion-slide>
+            <img src="https://blogs-images.forbes.com/gordonkelly/files/2018/05/1.jpg" alt="" srcset="" height="300px" width="100%" />
+        </ion-slide>
+
+        <ion-slide>
+            <img src="http://blog.awok.com/wp-content/uploads/2018/06/google-pixel-3-xl.jpg" height="300px" width="100%" alt="" srcset="" />
+        </ion-slide>
+    </ion-slides>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <h3>{{ 62974 | currency: "INR" }}</h3>
+                    <p>3 left in stock</p>
+                </ion-item>
+            </ion-col>
+            <ion-col>
+                <button (click)="buyNowPro()" ion-button round style="float:right;">
+          Buy Now
+        </button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <!-- <button style="float: right" ion-button icon-only>
+        <ion-icon name="heart"></ion-icon>
+      </button> -->
+                <ion-item>
+                    <p>Free Shipping<br /></p>
+                    <p>100% Genuine Product<br /></p>
+                    <p>Cash on Delievery<br /></p>
+                    <p>10 Days replacement<br /></p>
+                    <p>Delievery in 2-3 business days</p>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-item text-wrap>
+        <h3 align="center">White</h3>
+        <h3 align="center">6 Months Warranty</h3>
+        <div align="center">
+            <p>Product Specifications</p>
+        </div>
+
+        <!-- <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="heart"></ion-icon>
+      </button>
+    </ion-buttons> -->
+        <!-- <ion-icon name="skip-forward" (click)="gotoSeller()" item-end></ion-icon> -->
+    </ion-item>
+
+    <div align="center">
+        <a style="font-size:20px;" (click)="gotoSeller()">4 MORE SELLERS ({{62974 | currency: "INR"}} AND
+      ABOVE)</a>
+    </div>
+</ion-content>
+
+<!-- <ion-footer>
+  <ion-toolbar position="bottom">
+    <ion-item lines="none">
+
+      <button ion-button icon-start round small style="float:right;">
+        <ion-icon name="cart"></ion-icon>
+        Add to Cart
+      </button>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>
+ -->

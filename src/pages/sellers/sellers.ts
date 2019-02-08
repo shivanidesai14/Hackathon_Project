@@ -1,9 +1,10 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { ProfildetailsPage } from "../profildetails/profildetails";
+
+import { BuyProductPage } from "../buy-product/buy-product";
 
 /**
- * Generated class for the ProfilePage page.
+ * Generated class for the SellersPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,19 +12,18 @@ import { ProfildetailsPage } from "../profildetails/profildetails";
 
 @IonicPage()
 @Component({
-  selector: "page-profile",
-  templateUrl: "profile.html"
+  selector: "page-sellers",
+  templateUrl: "sellers.html"
 })
-export class ProfilePage {
-  order = "track";
-
+export class SellersPage {
+  myNum: number = 8128076168;
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
-    console.log("ionViewDidLoad ProfilePage");
+    console.log("ionViewDidLoad SellersPage");
   }
-  onEditProfile()
-  {
-    this.navCtrl.push(ProfildetailsPage);
+
+  buyNowPro() {
+    this.navCtrl.push(BuyProductPage);
   }
 }

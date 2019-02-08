@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DetailservicePage } from "../detailservice/detailservice";
 
 /**
- * Generated class for the ServicesPage page.
+ * Generated class for the PlaceOrderPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,20 +10,16 @@ import { DetailservicePage } from "../detailservice/detailservice";
 
 @IonicPage()
 @Component({
-  selector: 'page-services',
-  templateUrl: 'services.html',
+  selector: 'page-place-order',
+  templateUrl: 'place-order.html',
 })
-export class ServicesPage {
+export class PlaceOrderPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ServicesPage');
-  }
-  onClick()
-  {
-    this.navCtrl.push(DetailservicePage);
+    console.log('ionViewDidLoad PlaceOrderPage');
   }
 
 }

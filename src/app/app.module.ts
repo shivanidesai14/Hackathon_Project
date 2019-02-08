@@ -1,7 +1,8 @@
-import { NgModule, ErrorHandler } from "@angular/core";
+import { NgModule, ErrorHandler, forwardRef, Injectable } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { IonicApp, IonicModule, IonicErrorHandler } from "ionic-angular";
 import { MyApp } from "./app.component";
+import { CallNumber } from "@ionic-native/call-number/ngx";
 
 import { AboutPage } from "../pages/about/about";
 import { ContactPage } from "../pages/contact/contact";
@@ -16,6 +17,13 @@ import { ProductsPage } from "../pages/products/products";
 import { ListProductsPage } from "../pages/list-products/list-products";
 import { ServicesPage } from "../pages/services/services";
 import { ProfilePage } from "../pages/profile/profile";
+import { DetailservicePage } from "../pages/detailservice/detailservice";
+import { BuyProductPage } from "../pages/buy-product/buy-product";
+import { SellersPage } from "../pages/sellers/sellers";
+import { ProductDetailPage } from "../pages/product-detail/product-detail";
+import { PlaceOrderPage  } from "../pages/place-order/place-order";
+import {ProfildetailsPage} from "../pages/profildetails/profildetails";
+
 
 @NgModule({
   declarations: [
@@ -29,7 +37,9 @@ import { ProfilePage } from "../pages/profile/profile";
     ProductsPage,
     ListProductsPage,
     ServicesPage,
-    ProfilePage
+    ProfilePage, DetailservicePage,
+    BuyProductPage,SellersPage,
+    ProductDetailPage,PlaceOrderPage,ProfildetailsPage
   ],
   imports: [BrowserModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
@@ -44,12 +54,18 @@ import { ProfilePage } from "../pages/profile/profile";
     ProductsPage,
     ListProductsPage,
     ServicesPage,
-    ProfilePage
+    ProfilePage,
+    DetailservicePage,
+    BuyProductPage,SellersPage,ProductDetailPage,
+    PlaceOrderPage,ProfildetailsPage
   ],
   providers: [
     StatusBar,
-    SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+  SplashScreen,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    CallNumber
+
+
   ]
 })
-export class AppModule {}
+export class AppModule { }
