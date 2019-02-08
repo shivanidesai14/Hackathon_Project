@@ -31,9 +31,21 @@
               </ion-item>
 
               <ion-item>
-                <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="upass" required></ion-input>
+                <ion-input type="{{ tt }}" type="password"  placeholder="Password" name="password" [(ngModel)]="upass" required></ion-input>
+
+              <ion-icon
+                *ngIf="!showPass"
+                name="ios-eye-off-outline"
+                (click)="showPassword()"
+                item-right
+              ></ion-icon>
+              <ion-icon
+                *ngIf="showPass"
+                name="ios-eye-off"
+                (click)="showPassword()"
+                item-right
+              ></ion-icon>
                 <ion-icon name="lock" item-left ></ion-icon>
-                <ion-icon name="eye" item-right ></ion-icon>
               </ion-item>
 
               <ion-item>

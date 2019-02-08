@@ -8,6 +8,7 @@ import {
 } from "ionic-angular";
 
 import { SignupPage } from "../signup/signup";
+
 import { TabsPage } from "../tabs/tabs";
 import { UserlogProvider } from "../Provider/userlog/userlog";
 import { User_Class } from "../Provider/userlog/user_class";
@@ -19,7 +20,7 @@ import { User_Class } from "../Provider/userlog/user_class";
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({ name: "page-login", segment: "page-login" })
 @Component({
   selector: "page-login",
   templateUrl: "login.html"
@@ -31,6 +32,8 @@ export class LoginPage {
   usr: User_Class[];
   user_cid: string = "";
   upino: string = "";
+  tt: string = "password";
+  showPass: boolean = false;
 
   constructor(
     public navCtrl: NavController,
@@ -44,7 +47,7 @@ export class LoginPage {
     console.log("ionViewDidLoad LoginPage");
   }
   onLogin() {
-    /* let t1 = this.toast.create({
+    let t1 = this.toast.create({
       message: "Login Successfully",
       duration: 3000,
       position: "bottom"
@@ -55,42 +58,6 @@ export class LoginPage {
       duration: 3000,
       position: "bottom"
     });
-<<<<<<< HEAD
-    this.db.Login(new User_Class(this.uid,'',this.email_id,this.password,'',this.user_cid,'',this.upino)).subscribe(
-      (x:User_Class[])=>{
-        console.log(x);
-       if(this.email_id=='' || this.password=='')
-        {
-          alert("enter valid data")
-        }
-        else{
-
-        if(x.length==1){
-          // t1.present();
-          this.uid=x[0].user_id;
-          alert(this.uid);
-          alert(x[0].user_id);
-          localStorage.setItem('id',x[0].user_id);
-          localStorage.setItem('email',x[0].user_email);
-          // this.email_id=x[0].user_email;
-          // this.password=x[0].user_password;
-          // this.user_cid=x[0].user_city_id;
-          // this.upino=x[0].user_pincode;
-          // localStorage.myVar=this.uid;
-          // localStorage.setItem('id',this.uid);
-          // localStorage.setItem('eid',this.email_id);
-          // localStorage.setItem('pass',this.password);
-          // localStorage.setItem('ucid',this.user_cid);
-          // localStorage.setItem('upino',this.upino);
-         //localStorage.setItem('id',this.uid);
-          this.navCtrl.push(TabsPage);
-
-        }
-        else{
-
-          t3.present();
-          this.navCtrl.push(LoginPage);
-=======
     this.db
       .Login(
         new User_Class(
@@ -110,6 +77,11 @@ export class LoginPage {
             alert("enter valid data");
           } else {
             if (x.length == 1) {
+              this.uid = x[0].user_id;
+              this.email_id = x[0].user_email;
+              this.password = x[0].user_password;
+              this.user_cid = x[0].user_city_id;
+              this.upino = x[0].user_pincode;
               t1.present();
               localStorage.setItem("id", this.uid);
               localStorage.setItem("eid", this.email_id);
@@ -117,7 +89,7 @@ export class LoginPage {
               localStorage.setItem("ucid", this.user_cid);
               localStorage.setItem("upino", this.upino);
               //localStorage.setItem('id',this.uid);
-              this.navCtrl.push(TabsPage);
+              this.navCtrl.setRoot(TabsPage);
             } else {
               t3.present();
               this.navCtrl.push(LoginPage);
@@ -127,18 +99,21 @@ export class LoginPage {
         function(error) {
           console.log(error);
         },
-        function() {
-          //l1.dismissAll();
->>>>>>> c55893915e5735482ec194121d6c90a01850530f
-        }
-      ); */
-    this.navCtrl.setRoot(TabsPage);
+        function() {}
+      );
+    //this.navCtrl.setRoot(TabsPage);
   }
   onSignup() {
     this.navCtrl.push(SignupPage);
   }
   showPassword() {
-    console.log("hi");
+    this.showPass = !this.showPass;
+
+    if (this.showPass) {
+      this.tt = "text";
+    } else {
+      this.tt = "password";
+    }
   }
   showPrompt() {
     let prompt = this.alert.create({

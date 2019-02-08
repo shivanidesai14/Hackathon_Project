@@ -4,6 +4,7 @@ import { TabsPage } from "../tabs/tabs";
 
 
 import { ProfildetailsPage } from "../profildetails/profildetails";
+import { PastorderPage } from "../pastorder/pastorder";
 
 import { UserlogProvider } from "../Provider/userlog/userlog";
 
@@ -43,6 +44,10 @@ usr:User_Class[]=[];
   }
   userprofile() {
     this.navCtrl.push(ProfildetailsPage);
+  }
+  onPast()
+  {
+    this.navCtrl.push(PastorderPage);
   }
 
 }

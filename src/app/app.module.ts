@@ -4,9 +4,8 @@ import { FormsModule } from "@angular/forms";
 import { IonicApp, IonicModule, IonicErrorHandler } from "ionic-angular";
 import { MyApp } from "./app.component";
 import { HttpModule } from "@angular/http";
-import { IonicStorageModule } from "@ionic/storage";
 import { HttpClientModule } from "@angular/common/http";
-import { CallNumber } from "@ionic-native/call-number/ngx";
+
 
 import { AboutPage } from "../pages/about/about";
 import { ContactPage } from "../pages/contact/contact";
@@ -26,6 +25,9 @@ import { BuyProductPage } from "../pages/buy-product/buy-product";
 import { ServicesPage } from "../pages/services/services";
 import { ProfilePage } from "../pages/profile/profile";
 import { ProfildetailsPage } from "../pages/profildetails/profildetails";
+import { ChangepasswordPage } from "../pages/changepassword/changepassword";
+import { PastorderPage } from "../pages/pastorder/pastorder";
+import { FeedbackPage } from "../pages/feedback/feedback";
 
 import { UserlogProvider } from "../pages/Provider/userlog/userlog";
 
@@ -46,7 +48,10 @@ import { UserlogProvider } from "../pages/Provider/userlog/userlog";
     ServicesPage,
     ProfilePage,
     SellersPage,
-    ProfildetailsPage
+    ProfildetailsPage,
+    ChangepasswordPage,
+    PastorderPage,
+    FeedbackPage
   ],
   imports: [
     BrowserModule,
@@ -72,14 +77,16 @@ import { UserlogProvider } from "../pages/Provider/userlog/userlog";
     ServicesPage,
     ProfilePage,
     SellersPage,
-    ProfildetailsPage
+    ProfildetailsPage,
+    ChangepasswordPage,
+    PastorderPage,
+    FeedbackPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    UserlogProvider,
-    CallNumber
+    UserlogProvider
   ]
 })
 export class AppModule {}
