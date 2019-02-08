@@ -21,7 +21,6 @@ export class ListProductsPage {
     console.log("ionViewDidLoad ListProductsPage");
   }
 
-  
   onProductClick() {
     this.navCtrl.push(ProductDetailPage);
   }

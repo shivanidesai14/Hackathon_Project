@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Service } from './service_c';
+import { ServicedbProvider } from '../../providers/servicedb/servicedb';
 import { DetailservicePage } from "../detailservice/detailservice";
-
 /**
  * Generated class for the ServicesPage page.
  *
@@ -15,16 +16,38 @@ import { DetailservicePage } from "../detailservice/detailservice";
   templateUrl: 'services.html',
 })
 export class ServicesPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+        arr:Service[]=[];
+       
+  constructor(public navCtrl: NavController,
+     public navParams: NavParams,
+     public _data:ServicedbProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ServicesPage');
+
+    this._data.getAllCategories().subscribe(
+
+      (data: any) => {
+       
+        this.arr=data.Data;
+
+      },
+      function (e) {
+        alert(e);
+      },
+      function () {
+       
+      }
+
+    );
+
   }
-  onClick()
-  {
-    this.navCtrl.push(DetailservicePage);
-  }
+ detailservice(sid) {
+   this.navCtrl.push(DetailservicePage, {
+     id: sid
+   })
+ }
+
 
 }

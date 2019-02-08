@@ -19,10 +19,10 @@ export class ProductsPage {
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad ProductsPage");
-    
   }
 
   onCardClick() {
+    alert(localStorage.getItem('id'));
     this.navCtrl.push(ListProductsPage);
   }
 }
