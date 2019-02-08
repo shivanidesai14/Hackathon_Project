@@ -23,6 +23,7 @@ export class ProductsPage {
   }
 
   onCardClick() {
+    alert(localStorage.getItem('id'));
     this.navCtrl.push(ListProductsPage);
   }
 }

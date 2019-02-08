@@ -12,7 +12,34 @@
 
 </ion-header>
 
+<ion-content>
+  <p> Near YOu </p>
+  <ion-card *ngFor="let item of arr">
 
-<ion-content padding>
-<p> heelo from detail</p>
+      
+          <ion-item>
+
+              <div class="item row">
+                  <span align="left" class="col col-30">{{item.retailer_name}} <br>{{item.retailer_email}}</span>
+                   <span align="right" class="col col-50"><a href="tel:{{item.retailer_mobile}}"><img src="../assets/imgs/telephone-call.png" style="height:30px;width:30px;float:right;margin-top:5px;"></a></span>
+              </div>
+
+
+          </ion-item>
+  </ion-card>
+<p> In Your City </p>
+  <ion-card *ngFor="let item of arr1">
+
+      
+    <ion-item>
+
+        <div class="item row">
+            <span align="left" class="col col-30">{{item.retailer_name}} <br>{{item.retailer_email}}</span>
+             <span align="right" class="col col-50"><a href="tel:{{item.retailer_mobile}}"><img src="../assets/imgs/telephone-call.png" style="height:30px;width:30px;float:right;margin-top:5px;"></a></span>
+        </div>
+
+
+    </ion-item>
+</ion-card>
+
 </ion-content>

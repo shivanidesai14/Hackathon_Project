@@ -31,6 +31,7 @@ export class ProfildetailsPage {
   ionViewDidLoad() {
     console.log("ionViewDidLoad ProfildetailsPage");
     this.uid=localStorage.getItem('id');
+    console.log("in ionViewDid "+this.uid);
     this.udata.getUserid(this.uid).subscribe(
       (data:User_Class[])=>{
         this.usr=data;
@@ -46,9 +47,22 @@ export class ProfildetailsPage {
     );
 
   }
-  onSaveButton()
+  onEditClick()
   {
-    alert("save");
+    let t1=this.toast.create({
+      message:"Profile Updated",
+      duration:3000,
+      position:"bottom"
+    });
+    console.log("in editClick "+this.uid);
+    this.udata.updateUser(new User_Class(this.uid,this.name,this.email,'',this.mno,'',this.address,this.pino)).subscribe(
+      (data:User_Class[])=>{
+       t1.present();
+        console.log(data);
+      },
+      function(err){},
+      function(){}
+    );
   }
 
 }

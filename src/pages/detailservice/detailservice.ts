@@ -17,9 +17,9 @@ import { ServicedbProvider } from '../../providers/servicedb/servicedb';
 })
 export class DetailservicePage {
   serviceid:number;
-usrpin:string='';
+usrpin:any='';
 
-usrcity:string='';
+usrcity:any='';
 public arr:Retailer[]=[];
 public arr1:Retailer[]=[];
   constructor(public navCtrl: NavController, 
@@ -32,7 +32,38 @@ public arr1:Retailer[]=[];
     this.serviceid=this.navParams.get('id');
     this.usrpin=localStorage.getItem('upino'); //get from localstorage
     this.usrcity=localStorage.getItem('ucid');//get cityid from localstorage
+    this.usrpin=parseInt(this.usrpin);
+    this.usrcity=parseInt(this.usrcity);
+    this._data.getserviceman(this.serviceid,this.usrpin,this.usrcity).subscribe(
+      (data:any)=>{
+        this.arr=data.Results;
+      //  alert(this.arr[0].retailer_id);
+      },
+      function (e) {
+        alert(e);
+      },
+      function () {
+       
+      }
+    );
+
     
+
+    
+  this._data.getserviceman1(this.usrcity,this.usrpin,this.usrcity).subscribe(
+    (data:any)=>{
+      this.arr1=data.Results;
+    },
+    function(e){
+      alert(e);
+    },
+    function(){
+
+    }
+
+    );
   }
+
+
 
 }
