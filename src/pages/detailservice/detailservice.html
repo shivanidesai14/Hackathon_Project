@@ -6,14 +6,21 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="extra">
     <ion-title>detailservice</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content>
-  <p> Near YOu </p>
+ <!---- <p style="font-size:20px;"><img src="../assets/imgs/crown.png" style="height:50px;width:50px;">Near You </p>-->
+ <ion-item style="align-content: center" >
+    <ion-avatar item-start>
+        <img src="../assets/imgs/icons8-near-me-96.png" >
+    </ion-avatar>
+    <h2>Near You</h2>
+
+</ion-item>
   <ion-card *ngFor="let item of arr">
 
       
@@ -27,7 +34,12 @@
 
           </ion-item>
   </ion-card>
-<p> In Your City </p>
+  <ion-item>
+      <ion-avatar item-start>
+          <img src="../assets/imgs/hand.png">
+      </ion-avatar>
+      <h2>In Your City</h2>
+  </ion-item>
   <ion-card *ngFor="let item of arr1">
 
       
