@@ -1,0 +1,52 @@
+<!--
+  Generated template for the SellersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Sellers In Your City</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <ion-list>
+      <!-- <ion-list-header>
+        Sellers Nearby
+      </ion-list-header> -->
+      <ion-item *ngFor="let item of proudcts" (click)="buyNowPro()">
+        <button ion-button item-end round style="float:right;">
+          Buy Now
+        </button>
+        <h2>{{item.retailer_name}}</h2>
+        <h1>{{item.price | currency:"INR"}}</h1>
+        <p><a href="tel:{{item.retailer_mobile}}" class="button" color="blue">Dial: {{item.retailer_mobile}}</a></p>
+        <!-- <p>+91{{item.retailer_mobile}}</p> -->
+        <p>{{item.retailer_address}}</p>
+        <p>{{item.retailer_pincode}}</p>
+      </ion-item>
+      <!-- <ion-item>
+        <button ion-button (click)="buyNowPro()" item-end round style="float:right;">
+          Buy Now
+        </button>
+        <h2>Bestdeals2211</h2>
+        <h1>{{ 62974 | currency: "INR" }}</h1>
+        <p>+918888555544</p>
+        <p>Ahmedabad - 380001</p>
+      </ion-item>
+      <ion-item>
+        <button ion-button item-end round style="float:right;">
+          Buy Now
+        </button>
+        <h2>Bestdeals2211</h2>
+        <h1>{{ 62974 | currency: "INR" }}</h1>
+        <p>+918888555544</p>
+        <p>Ahmedabad - 380001</p>
+      </ion-item> -->
+    </ion-list>
+  </ion-content>
+  

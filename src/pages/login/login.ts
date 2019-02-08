@@ -47,7 +47,12 @@ export class LoginPage {
     console.log("ionViewDidLoad LoginPage");
   }
   onLogin() {
+<<<<<<< HEAD
     let t1 = this.toast.create({
+=======
+    
+     let t1 = this.toast.create({
+>>>>>>> 3062673d7b3b283220c7a945fd1b0b08229c2cd3
       message: "Login Successfully",
       duration: 3000,
       position: "bottom"
@@ -58,6 +63,7 @@ export class LoginPage {
       duration: 3000,
       position: "bottom"
     });
+<<<<<<< HEAD
     this.db
       .Login(
         new User_Class(
@@ -102,6 +108,46 @@ export class LoginPage {
         function() {}
       );
     //this.navCtrl.setRoot(TabsPage);
+=======
+    this.db.Login(new User_Class(this.uid,'',this.email_id,this.password,'',this.user_cid,'',this.upino)).subscribe(
+      (x:User_Class[])=>{
+        console.log(x);
+       if(this.email_id=='' || this.password=='')
+        {
+          alert("enter valid data")
+        }
+        else{
+
+        if(x.length==1){
+          // t1.present();
+          this.uid=x[0].user_id;
+         
+          localStorage.setItem('id',x[0].user_id);
+          localStorage.setItem('email',x[0].user_email);
+          this.password=x[0].user_password;
+          this.user_cid=x[0].user_city_id;
+          this.upino=x[0].user_pincode;
+          localStorage.myVar=this.uid;
+          localStorage.setItem('id',this.uid);
+          localStorage.setItem('eid',this.email_id);
+          localStorage.setItem('pass',this.password);
+          localStorage.setItem('ucid',this.user_cid);
+          localStorage.setItem('upino',this.upino);
+         localStorage.setItem('id',this.uid); // this.email_id=x[0].user_email;
+         
+          this.navCtrl.push(TabsPage);
+
+        }
+        else{
+
+          t3.present();
+          this.navCtrl.push(LoginPage);
+        }
+      }
+    }
+      ); 
+    this.navCtrl.setRoot(TabsPage);
+>>>>>>> 3062673d7b3b283220c7a945fd1b0b08229c2cd3
   }
   onSignup() {
     this.navCtrl.push(SignupPage);
@@ -135,12 +181,11 @@ export class LoginPage {
         {
           text: "Send",
           handler: data => {
-            /*this.email = data.name;
-            this.forgotPassword();*/
           }
         }
       ]
     });
     prompt.present();
+
   }
 }

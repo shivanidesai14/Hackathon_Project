@@ -14,20 +14,31 @@
 
 
 <ion-content padding>
-  <ion-searchbar></ion-searchbar>
+  <ion-searchbar (keyup)="search()" [(ngModel)]="searchString"></ion-searchbar>
 
-  <ion-list>
-    <ion-item (click)="onProductClick()">
-      <ion-avatar item-start (click)="onProductClick()">
+  <ion-list *ngIf="searchStart">
+    <ion-item *ngFor="let item of matchedProducts" (click)="onProductDetail(item)">
+      <ion-avatar item-start>
         <img src="https://img4.gadgetsnow.com/gd/images/products/additional/large/G84285_View_1/mobiles/smartphones/google-pixel-3-xl-64gb-just-black-4gb-ram-.jpg">
       </ion-avatar>
-      <h2>From 59,999*</h2>
-      <h3>Pixel 3 & Pixel 3 XL</h3>
-      <p>Best smartphone available</p>
-      <p>2 Sellers nearby</p>
+      <h2>From {{item.product_price | currency:"INR"}} <span color="green">*</span> </h2>
+      <h3>{{item.product_name}}</h3>
+      <p>{{item.product_warranty}} Years</p>
+      <p>{{item.counts}} Sellers Nearby</p>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="!searchStart">
+    <ion-item *ngFor="let item of products" (click)="onProductDetail(item)">
+      <ion-avatar item-start>
+        <img src="https://img4.gadgetsnow.com/gd/images/products/additional/large/G84285_View_1/mobiles/smartphones/google-pixel-3-xl-64gb-just-black-4gb-ram-.jpg">
+      </ion-avatar>
+      <h2>From {{item.product_price | currency:"INR"}} <span color="green">*</span> </h2>
+      <h3>{{item.product_name}}</h3>
+      <p>{{item.product_warranty}} Years</p>
+      <p>{{item.counts}} Sellers Nearby</p>
     </ion-item>
 
-    <ion-item>
+    <!-- <ion-item>
       <ion-avatar item-start>
         <img src="https://www.91-img.com/pictures/128989-v5-realme-2-mobile-phone-large-1.jpg">
       </ion-avatar>
@@ -85,7 +96,7 @@
       <h3>Realme 2 (Upto 4GB|64GN)</h3>
       <p class="text-wrap">4230 mAh|Dual Rear Camera</p>
       <p>3 Sellers nearby</p>
-    </ion-item>
+    </ion-item> -->
 
   </ion-list>
 </ion-content>

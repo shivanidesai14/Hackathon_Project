@@ -85,9 +85,12 @@ export class ProfildetailsPage {
         function(err) {},
         function() {}
       );
+<<<<<<< HEAD
   }
   onChange()
   {
     this.navCtrl.push(ChangepasswordPage);
+=======
+>>>>>>> 3062673d7b3b283220c7a945fd1b0b08229c2cd3
   }
 }

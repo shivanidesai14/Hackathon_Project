@@ -1,10 +1,14 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { TabsPage } from "../tabs/tabs";
+import { ProfildetailsPage } from "../profildetails/profildetails";
 
 
+
+<<<<<<< HEAD
 import { ProfildetailsPage } from "../profildetails/profildetails";
 import { PastorderPage } from "../pastorder/pastorder";
+=======
+>>>>>>> 3062673d7b3b283220c7a945fd1b0b08229c2cd3
 
 import { UserlogProvider } from "../Provider/userlog/userlog";
 
@@ -42,12 +46,16 @@ usr:User_Class[]=[];
 
 
   }
-  userprofile() {
+  onEditProfile()
+  {
     this.navCtrl.push(ProfildetailsPage);
   }
+<<<<<<< HEAD
   onPast()
   {
     this.navCtrl.push(PastorderPage);
   }
 
+=======
+>>>>>>> 3062673d7b3b283220c7a945fd1b0b08229c2cd3
 }
