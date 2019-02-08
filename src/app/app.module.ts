@@ -3,7 +3,9 @@ import { BrowserModule } from "@angular/platform-browser";
 import { IonicApp, IonicModule, IonicErrorHandler } from "ionic-angular";
 import { HttpModule } from "@angular/http";
 import { HttpClientModule } from "@angular/common/http";
-import { MyApp } from "./app.component";
+import { MyApp } from "./app.component";;
+import { IonicStorageModule } from '@ionic/storage';
+
 
 import { AboutPage } from "../pages/about/about";
 import { ContactPage } from "../pages/contact/contact";
@@ -20,6 +22,10 @@ import { ListProductsPage } from "../pages/list-products/list-products";
 import { ServicesPage } from "../pages/services/services";
 import { ProfilePage } from "../pages/profile/profile";
 import { ServicedbProvider } from '../providers/servicedb/servicedb';
+import { ProfildetailsPage } from "../pages/profildetails/profildetails";
+
+
+import { UserlogProvider } from "../pages/Provider/userlog/userlog";
 
 @NgModule({
   declarations: [
@@ -34,12 +40,17 @@ import { ServicedbProvider } from '../providers/servicedb/servicedb';
     ListProductsPage,
     ServicesPage,
     ProfilePage,
-    DetailservicePage
+    DetailservicePage,
+    ProfildetailsPage
   ],
+  
   imports: [BrowserModule,
-     IonicModule.forRoot(MyApp),
-     HttpModule, HttpClientModule,],
+    HttpModule,
+    HttpClientModule,
+    IonicModule.forRoot(MyApp)
 
+
+  ],
   bootstrap: [IonicApp],
   
   entryComponents: [
@@ -54,13 +65,15 @@ import { ServicedbProvider } from '../providers/servicedb/servicedb';
     ListProductsPage,
     ServicesPage,
     ProfilePage,
-    DetailservicePage
+    DetailservicePage,
+    ProfildetailsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    ServicedbProvider
+    ServicedbProvider,
+    UserlogProvider
   ]
 })
 export class AppModule {}

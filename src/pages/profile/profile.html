@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="extra">
-    <ion-title>Welcome, Zeel Modi</ion-title>
+    <ion-title>Profile</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -18,8 +18,14 @@
       <ion-avatar item-start>
         <img src="https://www.india.com/wp-content/uploads/2018/02/Master-1.jpg">
       </ion-avatar>
-      <h1>Zeel Modi</h1>
-      <button ion-button round>Edit Profile</button>
+      <h1 >Zeel Modi</h1>
+
+
+          <ion-input  name="name" [(ngModel)]="uname" required></ion-input>
+        </ion-item>
+        <ion-item>
+
+      <button ion-button round  (click)="userprofile()"> Edit Profile</button>
     </ion-item>
   </ion-list>
 

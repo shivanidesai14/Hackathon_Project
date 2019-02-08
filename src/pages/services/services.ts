@@ -17,9 +17,7 @@ import { DetailservicePage } from "../detailservice/detailservice";
 })
 export class ServicesPage {
         arr:Service[]=[];
-        grid: Array<Array<any>>;
-    //    grid: Array<Array<string>>;
-
+       
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
      public _data:ServicedbProvider) {
@@ -31,8 +29,7 @@ export class ServicesPage {
     this._data.getAllCategories().subscribe(
 
       (data: any) => {
-       // this.arr = data;
-        console.log("hiee services");
+       
         this.arr=data.Data;
 
       },
