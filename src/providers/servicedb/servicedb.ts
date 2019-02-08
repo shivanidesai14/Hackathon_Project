@@ -9,7 +9,7 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class ServicedbProvider {
-  public url:string="http://localhost:3000/services/";
+  public url:string="http://localhost:8110/services/";
   public url2:string="http://localhost:8110/getservicesman/"
   constructor(public http: HttpClient) {
     console.log('Hello ServicedbProvider Provider');
