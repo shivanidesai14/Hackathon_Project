@@ -24,7 +24,8 @@
         </button>
         <h2>{{item.retailer_name}}</h2>
         <h1>{{item.price | currency:"INR"}}</h1>
-        <p>+91{{item.retailer_mobile}}</p>
+        <p><a href="tel:{{item.retailer_mobile}}" class="button" color="blue">Dial: {{item.retailer_mobile}}</a></p>
+        <!-- <p>+91{{item.retailer_mobile}}</p> -->
         <p>{{item.retailer_address}}</p>
         <p>{{item.retailer_pincode}}</p>
       </ion-item>

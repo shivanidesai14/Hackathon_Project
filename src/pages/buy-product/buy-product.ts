@@ -29,17 +29,11 @@ export class BuyProductPage {
   price: number;
   totalAmt: number;
   canNotIncreaseQty:boolean=false;
-  // dt:Date=new Date();
-  // dd
-  // delievery: boolean;
   constructor(public navCtrl: NavController, 
     public product_db:ProductDbProvider
     ,public navParams: NavParams) {
-      
-    // console.log(this.productDetail);
     this.seller_details=this.navParams.get('seller');
     this.productDetail=this.navParams.get('prod');
-    
     }
 
   ionViewWillEnter() {
@@ -54,7 +48,6 @@ export class BuyProductPage {
     });
     this.price=this.productDetail.product_price;
     this.totalAmt = this.price * this.quantity;
-    // this.delievery = false;
   }
 
   increase() {
@@ -80,10 +73,7 @@ export class BuyProductPage {
     this.navCtrl.pop();
   }
   placeOrder(){
-    // let todays = moment().local(true);
-    // var dd=new Date();
     this.date=new Date().toISOString();
-    console.log(this.date);
     this.product_db.placeOrder(new order(0,1,this.productDetail.product_id,
       this.quantity,
       this.seller_details.retailer_id,this.date,0,0
@@ -92,6 +82,5 @@ export class BuyProductPage {
       },(err)=>{
         console.log(err)},()=>{
       });
-    // this.navCtrl.push(PlaceOrderPage);
   }
 }

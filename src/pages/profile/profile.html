@@ -6,79 +6,67 @@
 -->
 <ion-header>
 
-  <ion-navbar color="extra">
-    <ion-title>Welcome, Zeel Modi</ion-title>
-  </ion-navbar>
+    <ion-navbar color="extra">
+        <ion-title>Welcome, Zeel Modi</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
+    <ion-list>
+        <ion-item>
+            <ion-avatar item-start>
+                <img src="https://www.india.com/wp-content/uploads/2018/02/Master-1.jpg">
+            </ion-avatar>
+            <h1>Zeel Modi</h1>
+            <button ion-button round (click)="onEditProfile()">Edit Profile</button>
+        </ion-item>
+    </ion-list>
+
     <ion-item>
-      <ion-avatar item-start>
-        <img src="https://www.india.com/wp-content/uploads/2018/02/Master-1.jpg">
-      </ion-avatar>
-      <h1>Zeel Modi</h1>
-      <button ion-button round>Edit Profile</button>
     </ion-item>
-  </ion-list>
 
-  <ion-item>
-   <!--  <<<<<<< HEAD <ion-avatar item-start>
-      <img src="https://www.india.com/wp-content/uploads/2018/02/Master-1.jpg">
-      </ion-avatar>
-      <h1>Zeel Modi</h1>
-      <button ion-button round>Edit Profile</button>
-      =======
-      <ion-icon name="bookmark"></ion-icon>
-      My WishList
-      >>>>>>> 75725f28fda3c2423df3ed1605382ecf0ca30cd2 -->
-  </ion-item>
+    <ion-item>
+        <ion-icon name="home"></ion-icon>
+        Shipping Address
+    </ion-item>
 
-  <ion-item>
-    <ion-icon name="home"></ion-icon>
-    Shipping Address
-  </ion-item>
+    <ion-item>
+        <ion-icon name="bookmark"></ion-icon>
+        My WishList
+    </ion-item>
 
-  <ion-item>
-    <ion-icon name="bookmark"></ion-icon>
-    My WishList
-  </ion-item>
+    <div padding>
+        <ion-segment [(ngModel)]="order">
+            <ion-segment-button value="track">
+                Track Orders
+            </ion-segment-button>
+            <ion-segment-button value="past">
+                Past Orders
+            </ion-segment-button>
+        </ion-segment>
+    </div>
 
-  <div padding>
-    <ion-segment [(ngModel)]="order">
-      <ion-segment-button value="track">
-        Track Orders
-      </ion-segment-button>
-      <ion-segment-button value="past">
-        Past Orders
-      </ion-segment-button>
-    </ion-segment>
-  </div>
+    <div [ngSwitch]="order">
+        <ion-list *ngSwitchCase="'track'">
+            <ion-item>
 
-  <div [ngSwitch]="order">
-    <ion-list *ngSwitchCase="'track'">
-      <ion-item>
-        <!-- <ion-thumbnail item-start>
-          <img src="img/thumbnail-puppy-1.jpg">
-        </ion-thumbnail> -->
-        <!-- <h2>Ruby</h2> -->
-      </ion-item>
-      No Orders
-    </ion-list>
+            </ion-item>
+            No Orders
+        </ion-list>
 
-  </div>
+    </div>
 
-  <div [ngSwitch]="order">
-    <ion-list *ngSwitchCase="'past'">
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="img/thumbnail-puppy-1.jpg">
-        </ion-thumbnail>
-        <!-- <h2>Ruby</h2> -->
-      </ion-item>
-      No Orders
-    </ion-list>
+    <div [ngSwitch]="order">
+        <ion-list *ngSwitchCase="'past'">
+            <ion-item>
+                <ion-thumbnail item-start>
+                    <img src="img/thumbnail-puppy-1.jpg">
+                </ion-thumbnail>
+                <!-- <h2>Ruby</h2> -->
+            </ion-item>
+            No Orders
+        </ion-list>
 
-  </div>
+    </div>
 </ion-content>

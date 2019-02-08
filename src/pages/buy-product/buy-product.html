@@ -11,7 +11,8 @@
   <ion-item>
     <h1>{{user_details.user_name}}</h1>
     <p>{{user_details.user_address}} - {{user_details.user_pincode}}</p>
-    <p>{{user_details.user_phone}}</p>
+    <p><a href="tel:{{user_details.user_phone}}" class="button" color="blue">Dial: {{user_details.user_phone}}</a></p>
+    <!-- <p>{{user_details.user_phone}}</p> -->
     <p>{{user_details.user_email}}</p>
   </ion-item>
 
@@ -29,11 +30,8 @@
         <ion-col>
           <ion-row>
             <ion-col>
-              <img src="https://img4.gadgetsnow.com/gd/images/products/additional/large/G84285_View_1/mobiles/smartphones/google-pixel-3-xl-64gb-just-black-4gb-ram-.jpg"
+              <img src="{{productDetail.product_img}}"
                 alt="" height="75px" width="50px" srcset="" style="float: right;">
-              <!-- <ion-thumbnail item-end>
-            <img src="https://img4.gadgetsnow.com/gd/images/products/additional/large/G84285_View_1/mobiles/smartphones/google-pixel-3-xl-64gb-just-black-4gb-ram-.jpg">
-          </ion-thumbnail> -->
             </ion-col>
           </ion-row>
         </ion-col>

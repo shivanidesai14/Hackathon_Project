@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+// import { Component } from '@angular/core';
+// import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { product_detail_one } from '../../all_classes/product_first_class';
 import { inventory } from '../../all_classes/inventory_class';
 import { ProductDbProvider } from '../../providers/product-db/product-db';
 import { SellerPage } from '../seller/seller';
-import { BuyProductPage } from '../buy-product/buy-product';
+// import { BuyProductPage } from '../buy-product/buy-product';
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { SellersPage } from "../sellers/sellers";
+import { BuyProductPage } from "../buy-product/buy-product";
 
 /**
  * Generated class for the ProductDetailPage page.

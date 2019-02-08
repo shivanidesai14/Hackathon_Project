@@ -50,7 +50,7 @@
             <img src="../assets/imgs/5.jpg" alt="">
         </ion-slide>
         <ion-slide>
-            <img src="../assets/imgs/category_9bf537c0.webp" alt="">
+            <img src="../assets/imgs/category_9bf537c0.png" alt="">
         </ion-slide>
         <ion-slide>
             <img src="../assets/imgs/3.png" alt="">
@@ -61,20 +61,13 @@
     </ion-slides>
 
 
-    <!-- <ion-item>
-        <img src="http://purplelynx.com/wp-content/uploads/2015/09/shop.png" alt="" srcset="">
-    </ion-item> -->
-
-
-
     <h1 align="center">Our Products</h1>
 
-    <ion-card *ngFor="let item of categories" (click)="onCardClick(item.category_id)">
+    <!-- <ion-card *ngFor="let item of categories" (click)="onCardClick(item.category_id)">
         <img src="{{item.cat_img}}" class="imgBlur" />
-        <!-- <img src="https://blog.mozilla.org/wp-content/uploads/2017/03/real-mobile-2x-1400x770.png" class="imgBlur" /> -->
         <div class="card-title">{{item.category_name}}</div>
         <div class="card-subtitle">41 Listings</div>
-    </ion-card>
+    </ion-card> -->
 
     <!-- <ion-card>
         <img src="http://www.pngmart.com/files/7/Groceries-PNG-Transparent-Image.png" />
@@ -82,16 +75,20 @@
         <div class="card-subtitle">64 Listings</div>
     </ion-card> -->
 
-    <!-- <ion-card>
-      <img src="img/card-sf.png" />
-      <div class="card-title">San Francisco</div>
-      <div class="card-subtitle">72 Listings</div>
+<ion-card *ngFor="let item of categories" (click)="onCardClick(item.category_id)">
+        <img src="{{item.cat_img}}" class="imgBlur" />
+        <!-- <img src="https://blog.mozilla.org/wp-content/uploads/2017/03/real-mobile-2x-1400x770.png" class="imgBlur" /> -->
+        <div class="myOverlay">
+        <div class="card-title">{{item.category_name}}</div>
+        <!-- <div class="card-subtitle">41 Listings</div> -->
+        </div>
     </ion-card>
+    <!-- <ion-card class="myCard">
+        <img src="http://www.pngmart.com/files/7/Groceries-PNG-Transparent-Image.png" />
+        <div class="myOverlay">
+            <div class="card-title">Groceries</div>
+            <div class="card-subtitle">10 Listings</div>
+        </div>
+    </ion-card> -->
 
-    <ion-card>
-      <img src="img/card-madison.png" />
-      <div class="card-title">Madison</div>
-      <div class="card-subtitle">28 Listings</div>
-    </ion-card>
- -->
 </ion-content>

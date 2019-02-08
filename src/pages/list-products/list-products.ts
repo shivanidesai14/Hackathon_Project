@@ -3,6 +3,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProductDbProvider } from "../../providers/product-db/product-db";
 import { product_detail_one } from "../../all_classes/product_first_class";
 import { ProductDetailPage } from '../product-detail/product-detail';
+// import { Component } from "@angular/core";
+// import { IonicPage, NavController, NavParams } from "ionic-angular";
+// import { ProductDetailPage } from "../product-detail/product-detail";
+
 /**
  * Generated class for the ListProductsPage page.
  *
@@ -12,8 +16,8 @@ import { ProductDetailPage } from '../product-detail/product-detail';
 
 @IonicPage()
 @Component({
-  selector: 'page-list-products',
-  templateUrl: 'list-products.html',
+  selector: "page-list-products",
+  templateUrl: "list-products.html"
 })
 export class ListProductsPage {
 
