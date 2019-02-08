@@ -7,8 +7,6 @@ import {
   ToastController
 } from "ionic-angular";
 
-
-
 import { SignupPage } from "../signup/signup";
 import { TabsPage } from "../tabs/tabs";
 import { UserlogProvider } from "../Provider/userlog/userlog";
@@ -27,36 +25,37 @@ import { User_Class } from "../Provider/userlog/user_class";
   templateUrl: "login.html"
 })
 export class LoginPage {
-  uid:string='';
-  email_id:string='';
-  password:string='';
-  usr:User_Class[];
-  user_cid:string='';
-  upino:string='';
+  uid: string = "";
+  email_id: string = "";
+  password: string = "";
+  usr: User_Class[];
+  user_cid: string = "";
+  upino: string = "";
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public alert: AlertController,
-    public db:UserlogProvider,
-    public toast:ToastController
+    public db: UserlogProvider,
+    public toast: ToastController
   ) {}
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad LoginPage");
   }
   onLogin() {
-    let t1=this.toast.create({
-      message:"Login Successfully",
-      duration:3000,
-      position:"bottom"
+    /* let t1 = this.toast.create({
+      message: "Login Successfully",
+      duration: 3000,
+      position: "bottom"
     });
-    let t3=this.toast.create({
-      message:"Enter proper mail id and Password or You had not verified your account",
-      duration:3000,
-      position:"bottom"
-
+    let t3 = this.toast.create({
+      message:
+        "Enter proper mail id and Password or You had not verified your account",
+      duration: 3000,
+      position: "bottom"
     });
+<<<<<<< HEAD
     this.db.Login(new User_Class(this.uid,'',this.email_id,this.password,'',this.user_cid,'',this.upino)).subscribe(
       (x:User_Class[])=>{
         console.log(x);
@@ -91,27 +90,55 @@ export class LoginPage {
 
           t3.present();
           this.navCtrl.push(LoginPage);
+=======
+    this.db
+      .Login(
+        new User_Class(
+          this.uid,
+          "",
+          this.email_id,
+          this.password,
+          "",
+          this.user_cid,
+          "",
+          this.upino
+        )
+      )
+      .subscribe(
+        (x: User_Class[]) => {
+          if (this.email_id == "" || this.password == "") {
+            alert("enter valid data");
+          } else {
+            if (x.length == 1) {
+              t1.present();
+              localStorage.setItem("id", this.uid);
+              localStorage.setItem("eid", this.email_id);
+              localStorage.setItem("pass", this.password);
+              localStorage.setItem("ucid", this.user_cid);
+              localStorage.setItem("upino", this.upino);
+              //localStorage.setItem('id',this.uid);
+              this.navCtrl.push(TabsPage);
+            } else {
+              t3.present();
+              this.navCtrl.push(LoginPage);
+            }
+          }
+        },
+        function(error) {
+          console.log(error);
+        },
+        function() {
+          //l1.dismissAll();
+>>>>>>> c55893915e5735482ec194121d6c90a01850530f
         }
-      }
-
-
-
-      },
-      function(error){
-        console.log(error);
-      },
-      function(){
-        //l1.dismissAll();
-      }
-    );
-    //this.navCtrl.setRoot(TabsPage);
-
+      ); */
+    this.navCtrl.setRoot(TabsPage);
   }
   onSignup() {
     this.navCtrl.push(SignupPage);
   }
   showPassword() {
-    console.log('hi');
+    console.log("hi");
   }
   showPrompt() {
     let prompt = this.alert.create({
