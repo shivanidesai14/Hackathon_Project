@@ -26,7 +26,8 @@ export class SignupPage {
   umno:string='';
   pino:string='';
   userobject:User_Class;
-
+uadd:string='';
+ucid:string='';
 
   constructor(public toast:ToastController,public navCtrl: NavController, public navParams: NavParams,public data:UserlogProvider) {
   }
@@ -35,7 +36,10 @@ export class SignupPage {
     console.log('ionViewDidLoad SignupPage');
   }
   onSignupClick()
-  { let t2=this.toast.create({
+
+  {
+    alert('hi');
+     let t2=this.toast.create({
     message:"Enter Email Id",
     duration:3000,
     position:"bottom"
@@ -65,7 +69,7 @@ export class SignupPage {
   }
 else
 {
-  this.data.addUser(new User_Class(null,this.uname,this.uemail,this.upass,this.umno,null,'',this.pino))
+  this.data.addUser(new User_Class(null,this.uname,this.uemail,this.upass,this.umno,this.ucid,this.uadd,this.pino))
       .subscribe(
 
         (data:User_Class[])=>{
@@ -75,7 +79,8 @@ else
          console.log(error);
        },
        function(){
-        //alert("success");
+        alert("success");
+
        }
       );
       this.navCtrl.push(ProductsPage);
