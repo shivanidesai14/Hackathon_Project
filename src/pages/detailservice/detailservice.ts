@@ -49,7 +49,7 @@ public arr1:Retailer[]=[];
 
     
 
-    
+
   this._data.getserviceman1(this.usrcity,this.usrpin,this.usrcity).subscribe(
     (data:any)=>{
       this.arr1=data.Results;

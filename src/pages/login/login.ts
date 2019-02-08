@@ -44,7 +44,7 @@ export class LoginPage {
     console.log("ionViewDidLoad LoginPage");
   }
   onLogin() {
-    alert("login");
+    
      let t1 = this.toast.create({
       message: "Login Successfully",
       duration: 3000,
@@ -126,6 +126,6 @@ export class LoginPage {
       ]
     });
     prompt.present();
-    
+
   }
 }
